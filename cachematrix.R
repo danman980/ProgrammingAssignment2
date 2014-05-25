@@ -1,8 +1,6 @@
-## makeCacheMatrix is a constructor (O.O.P -like) for a "special" matrix
-## that contains a matrix, an inverse matrix, and 4 methods, to set and
-## get
-##
-
+## makeCacheMatrix returns an object ("special Matrix") ## that contains a matrix, its inverse matrix, 
+## and 4 methods to set and get (set, get, setinverse, getinverse)
+## ex. makeCacheMatrix(matrix(1:4,2,2))    ====> creates a matrix 2x2, with an null inverse
 makeCacheMatrix <- function(x = matrix()) {
   m_inv <- NULL
   set <- function(y) {
@@ -18,9 +16,9 @@ makeCacheMatrix <- function(x = matrix()) {
 }
 
 
-## cacheSolve returns the inverse of a matrix, calculated or read from
-## a cache.
-
+## cacheSolve returns the inverse of a matrix, calculated from data 
+## or read from cache.
+## ex. cacheSolve(mymatrix) ===> returns an inverse matrix of mymatrix, and also write it in a cache                                
 cacheSolve <- function(x, ...) {
         ## Return a matrix that is the inverse of 'x'
   m_inv <- x$getinverse()
